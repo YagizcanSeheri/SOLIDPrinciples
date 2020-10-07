@@ -18,13 +18,15 @@
 3.) **Liskov Substitution Principle** <br/>
 
 -*Alt sınıflardan oluşan nesnelerin üst sınıfın nesneleri ile yer değiştirdikleri zaman, aynı davranışı sergilemesini beklemektedir öyle ki alt sınıflarda oluşan nesneler üst sınıflardan oluşan nesneler ile yer değiştirilebilir olmalıdır.*<br/>
+-Örneğin, karenin ve dikdörtgenin alanını hesaplayan basit bir uygulamamız olsun. Bir dikdörtgen sınıf oluşturarak bu sınıfa 2 member veriyoruz. Yüksekllik ve uzunluk, fakat kare geometrik şekili için bu ata sınıf çokta uygun olmamaktadır. Yani dikdörtgen sınıfından kalıtım alan bir kare sınıfından nesne oluşturmaya kalkarsak ata sınıfların mantığından ve amacından şaşmış oluyoruz ve bu prensibe ters düşmüş oluyoruz. Bu hatayı düzeltmek için dörtgen yapısnın ortak özelliklerini barındıracak bir sınıf oluşturulmalı ve her bir geometrik şekil için bir sınıf oluşturularak kendi alan hesaplamalarına sahip olduğundan emin olmalıyız.
 
 [-LSP Examples](https://github.com/YagizcanSeheri/SOLIDPrinciples/tree/master/SOLIDPrinciples/Liskov%20Subtution%20Principle)<br/>
 
 4.) **Interface Segregation Principle** <br/>
 
 -Interfacelerin doğru parçalara ayrılmasıdır yani sınıflar ihtiyaçları olmayan özellikleri ve davranışları içeren interfacelerden implement edilmemelidir.<br/>
--Örneğin, karenin ve dikdörtgenin alanını hesaplayan basit bir uygulamamız olsun. Bir dikdörtgen sınıf oluşturarak bu sınıfa 2 member veriyoruz. Yüksekllik ve uzunluk, fakat kare geometrik şekili için bu ata sınıf çokta uygun olmamaktadır. Yani dikdörtgen sınıfından kalıtım alan bir kare sınıfından nesne oluşturmaya kalkarsak ata sınıfların mantığından ve amacından şaşmış oluyoruz ve bu prensibe ters düşmüş oluyoruz. Bu hatayı düzeltmek için dörtgen yapısnın ortak özelliklerini barındıracak bir sınıf oluşturulmalı ve her bir geometrik şekil için bir sınıf oluşturularak kendi alan hesaplamalarına sahip olduğundan emin olmalıyız.
+-Örneğin bir IVehicle arayüzümüz olsun, bu interface Uçma ve Karada gitme yeteneklerine sahip olsun. İlgili interface'yi araba ve uçak sınıflarına implement ettiğimizi varsayalım. Bu implementation sonucunda araba ve uçak sınıfları ilgili yeteneklere kavuşur. Bu bağlamda uçak sınıfı implemantation sonucunda ediğindiği yetenekleri karşılamaktadır. Lakin araba sınıfı aldığı yetenekleri karşılayamaz çünkü arabalar uçamaz. Bu senaryoda araba sınıfı gerekisiz bir davranış kazanmış ve bu prensibe ters düşmüş durumdadır. Bu durumu düzeltmek için Uçabilen, Karada giden araçlar tarzında interface'ler açarak alt sınıfların gereksiz davranışlar kazanmasının önüne geçebiliriz.
+
 
 [-ISP Examples](https://github.com/YagizcanSeheri/SOLIDPrinciples/tree/master/SOLIDPrinciples/Interface%20Segration%20Principle)<br/>
 
